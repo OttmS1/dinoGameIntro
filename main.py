@@ -1,10 +1,9 @@
 import getpixelcolor as getcolor
-import pynput.keyboard
-from pynput.keyboard import Key, Controller
-import webbrowser
-import googlesearch as google
+import pynput
 
-google.search(query="chrome://dino")
+def scanField():
+      
 
-
+def run(xpos, height):
+   
 
