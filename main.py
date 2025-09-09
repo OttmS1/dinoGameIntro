@@ -32,7 +32,7 @@ pgui.press("i")
 pgui.keyUp("ctrl")
 pgui.keyUp("shift")
 
-time.sleep(10)
+time.sleep(3)
 pgui.keyDown("ctrl")
 pgui.keyDown("shift")
 pgui.press("i")
