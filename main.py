@@ -1,15 +1,54 @@
-import getpixelcolor as getcolor
-import pynput
-from pynput.mouse import Controller as mouseCont
-from pynput.keyboard import Controller as keyCont
-from pynput.keyboard import Key
+import pyautogui as pgui
+import time
 
-mouse = mouseCont()
 
-mousePos = mouse.position
+#ask for permission
+pgui.press("space")
 
-def scanForObsticle():
-   scannedCol = getcolor.pixel(mousePos[0] + 200, mousePos[1])
-   
-   if scannedCol[0] >= 150:
-   
+wait = input("go? y/n: ")
+time.sleep(5)
+pgui.press("space")
+
+#open dev console
+pgui.keyDown("ctrl")
+pgui.keyDown("shift")
+pgui.press("i")
+pgui.keyUp("ctrl")
+pgui.keyUp("shift")
+
+#god mode
+pgui.write("var original = Runner.prototype.gameOver")
+pgui.press("enter")
+pgui.write("Runner.prototype.gameOver = function() {}")
+pgui.press("enter")
+
+#crank speed
+pgui.write("runnerInstance.setSpeed(10000000)")
+pgui.press("enter")
+
+pgui.keyDown("ctrl")
+pgui.keyDown("shift")
+pgui.press("i")
+pgui.keyUp("ctrl")
+pgui.keyUp("shift")
+
+time.sleep(10)
+pgui.keyDown("ctrl")
+pgui.keyDown("shift")
+pgui.press("i")
+pgui.keyUp("ctrl")
+pgui.keyUp("shift")
+
+pgui.write("runnerInstance.setSpeed(10)")
+pgui.press("enter")
+
+pgui.write("Runner.prototype.gameOver = original")
+pgui.press("enter")
+
+pgui.keyDown("ctrl")
+pgui.keyDown("shift")
+pgui.press("i")
+pgui.keyUp("ctrl")
+pgui.keyUp("shift")
+
+pgui.press("space")
