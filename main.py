@@ -1,9 +1,15 @@
 import getpixelcolor as getcolor
 import pynput
+from pynput.mouse import Controller as mouseCont
+from pynput.keyboard import Controller as keyCont
+from pynput.keyboard import Key
 
-def scanField():
-      
+mouse = mouseCont()
 
-def run(xpos, height):
+mousePos = mouse.position
+
+def scanForObsticle():
+   scannedCol = getcolor.pixel(mousePos[0] + 200, mousePos[1])
    
-
+   if scannedCol[0] >= 150:
+   
