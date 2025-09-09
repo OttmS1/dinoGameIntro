@@ -6,7 +6,7 @@ import time
 pgui.press("space")
 
 wait = input("go? y/n: ")
-time.sleep(5)
+time.sleep(3)
 pgui.press("space")
 
 #open dev console
@@ -16,11 +16,7 @@ pgui.press("i")
 pgui.keyUp("ctrl")
 pgui.keyUp("shift")
 
-#god mode
-pgui.write("var original = Runner.prototype.gameOver")
-pgui.press("enter")
-pgui.write("Runner.prototype.gameOver = function() {}")
-pgui.press("enter")
+time.sleep(0.25)
 
 #crank speed
 pgui.write("runnerInstance.setSpeed(100000)")
@@ -41,11 +37,10 @@ pgui.press("i")
 pgui.keyUp("ctrl")
 pgui.keyUp("shift")
 
+time.sleep(0.1)
 pgui.write("runnerInstance.setSpeed(10)")
 pgui.press("enter")
 
-pgui.write("Runner.prototype.gameOver = original")
-pgui.press("enter")
 
 pgui.keyDown("ctrl")
 pgui.keyDown("shift")
